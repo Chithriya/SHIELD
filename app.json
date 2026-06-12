@@ -1,0 +1,110 @@
+{
+  "expo": {
+    "name": "SHIELD",
+    "slug": "shield-safety-app",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0A0A"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.shield.womenSafety",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "SHIELD needs your location to send it with SOS alerts.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "SHIELD uses background location to monitor safe zones and keep you protected even when the app is closed.",
+        "NSLocationAlwaysUsageDescription": "SHIELD uses background location for geofencing and continuous safety monitoring.",
+        "UIBackgroundModes": ["location", "fetch", "remote-notification"]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0A0A"
+      },
+      "package": "com.shield.womenSafety",
+      "permissions": [
+          "ACCESS_FINE_LOCATION",
+          "ACCESS_COARSE_LOCATION",
+          "ACCESS_BACKGROUND_LOCATION",
+          "FOREGROUND_SERVICE",
+          "FOREGROUND_SERVICE_LOCATION",
+          "FOREGROUND_SERVICE_MICROPHONE",
+          "FOREGROUND_SERVICE_CAMERA",
+          "RECEIVE_BOOT_COMPLETED",
+          "SEND_SMS",
+          "READ_CONTACTS",
+          "WRITE_CONTACTS",
+          "VIBRATE",
+          "WAKE_LOCK",
+          "REQUEST_IGNORE_BATTERY_OPTIMIZATIONS",
+          "READ_EXTERNAL_STORAGE",
+          "WRITE_EXTERNAL_STORAGE",
+          "CAMERA",
+          "RECORD_AUDIO"
+      ]
+    },
+    
+    "plugins": [
+  [
+    "expo-location",
+    {
+      "locationAlwaysAndWhenInUsePermission": "Allow SHIELD to use your location for SOS alerts and safe zone monitoring.",
+      "isAndroidBackgroundLocationEnabled": true,
+      "isAndroidForegroundServiceEnabled": true
+    }
+  ],
+  [
+    "expo-notifications",
+    {
+      "icon": "./assets/notification-icon.png",
+      "color": "#E53935",
+      "sounds": []
+    }
+  ],
+  [
+    "expo-contacts",
+    {
+      "contactsPermission": "Allow SHIELD to access your contacts to set emergency contacts."
+    }
+  ],
+  "expo-task-manager",
+  "expo-background-fetch",
+  [
+    "expo-camera",
+    {
+      "cameraPermission": "Allow SHIELD to access your camera to capture evidence during SOS."
+    }
+  ],
+  [
+    "expo-media-library",
+    {
+      "photosPermission": "Allow SHIELD to save evidence photos to your gallery.",
+      "savePhotosPermission": "Allow SHIELD to save photos.",
+      "isAccessMediaLocationEnabled": true
+    }
+  ],
+  [
+    "expo-speech-recognition",
+    {
+      "microphonePermission": "Allow SHIELD to use the microphone for voice trigger detection.",
+      "speechRecognitionPermission": "Allow SHIELD to use speech recognition to detect your voice trigger phrase."
+    }
+  ],
+  "expo-audio"
+],
+    "extra": {
+      "eas": {
+        "projectId": "3972a52c-96dd-49f4-a24e-f44890891137"
+      }
+    }
+  },
+  "cli": {
+    "appVersionSource": "remote"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "jsx": "react-native",
+    "lib": ["DOM", "ESNext"],
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "verbatimModuleSyntax": false,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.d.ts",
+    "expo-env.d.ts"
+  ]
+}
